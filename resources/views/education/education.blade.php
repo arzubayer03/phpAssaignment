@@ -2,39 +2,34 @@
 
 @section('content')
 <div class="container d-flex">
-    <div class="row col-md-6">
+    <div class="row col-md-4 ">
         <div class="container">
-    <div class="row justify-content-center m-2">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Create Education') }}</div>
-
-                <div class="card-body">
-                    <div class="container">
-                        <h2 class="mt-5 mb-4">Create education</h2>
-                        <form action="{{route('store.education')}}" method="POST">
-                            @csrf
+            <div class="row justify-content-center m-2">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header bg-warning text-center">{{ __('Create Education') }}</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <h3 class="mt-5 mb-4"><em>Create Education</em></h3>
+                                <form action="{{route('store.education')}}" method="POST">
+                                @csrf
                             <div class="form-group">
                                 <label for="degreeName">Degree Name:</label>
-                                <input type="text" class="form-control" name="degreeName" placeholder="Enter your Degree Name"
-                                    required>
+                                <input type="text" class="form-control" name="degreeName" placeholder="Enter your Degree Name" required>
                             </div>
                             <div class="form-group">
                                 <label for="institute">Institute:</label>
-                                <input type="text" class="form-control" name="institute" placeholder="Enter your Institute"
-                                    required>
+                                <input type="text" class="form-control" name="institute" placeholder="Enter your Institute" required>
                             </div>
                             <div class="form-group">
                                 <label for="passingYear">Passing Year:</label>
-                                <input type="number" class="form-control" name="passingYear" placeholder="Enter your Passing Year"
-                                    required>
+                                <input type="number" class="form-control" name="passingYear" placeholder="Enter your Passing Year" required>
                             </div>
                             <div class="form-group">
                                 <label for="studentID">Student ID:</label>
-                                <input type="text" class="form-control" name="studentID"
-                                    placeholder="Enter your Student ID" required>
+                                <input type="text" class="form-control" name="studentID" placeholder="Enter your Student ID" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-success mt-3 ms-5">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -42,19 +37,16 @@
         </div>
     </div>
 </div>
-    </div>
-    <div class="row col-md-6">
-        <div class="container">
-    <div class="row justify-content-center m-2">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Education List') }}</div>
-
-                <div class="card-body">
-                    <div class="container">
-                        <h2 class="mt-5 mb-4">Education List</h2>
-                        <table class="table">
-                            <thead>
+</div>
+    <div class="container col-md-8">
+        <div class="row justify-content-center m-2">
+            <div class="col-md-12">
+                <div class="card ">
+                    <div class="card-header bg-primary text-center text-white">{{ __('Education List') }}</div>
+                    <div class="card-body">
+                        <h2 class="mt-5 mb-4 text-center"><em>Education List</em></h2>
+                        <table class="table table-info table-striped rounded-3">
+                            <thead class="bg-dark">
                                 <th>Degree Name</th>
                                 <th>Institute</th>
                                 <th>Passing Year</th>
@@ -69,21 +61,19 @@
                                     <td>{{$education->institute}}</td>
                                     <td>{{$education->passingYear}}</td>
                                     <td>{{$education->studentID}}</td>
-                                     <td>
-                                        <a href="{{route('education.edit',$education->id)}}"
-                                            class="btn btn-success">Edit</a>
+                                    <td>
+                                        <a href="{{route('education.edit',$education->id)}}"class="btn btn-success">Edit</a>
                                     </td>
                                     <td>
                                         <form action="{{route('education.delete',$education->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delte</button>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
-
                         </table>
                     </div>
                 </div>
@@ -91,7 +81,6 @@
         </div>
     </div>
 </div>
-    </div>
 </div>
 @endsection
 @section('footerScript')

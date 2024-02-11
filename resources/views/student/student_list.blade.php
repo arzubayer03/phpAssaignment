@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Create Student') }}</div>
+                <div class="card-header text-center bg-warning">{{ __('Student List') }}</div>
 
                 <div class="card-body">
                     <div class="container">
-                        <h2 class="mt-5 mb-4">Create Student</h2>
-                        <table class="table">
+                        <h2 class="mt-5 mb-4 text-center"><em>Student List</em></h2>
+                        <table class="table table-info table-striped rounded-3">
                             <thead>
                                 <th>Name</th>
                                 <th>Roll</th>

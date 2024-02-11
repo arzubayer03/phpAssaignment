@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Create Student') }}</div>
+                <div class="card-header text-center bg-info">{{ __('Create Student') }}</div>
 
                 <div class="card-body">
                     <div class="container">
-                        <h2 class="mt-5 mb-4">Create Student</h2>
+                        <h2 class="mt-5 mb-4 text-center ">Create Student</h2>
                         <form action="{{route('store.student')}}" method="POST">
                             @csrf
                             <div class="form-group">
